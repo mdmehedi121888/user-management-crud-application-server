@@ -14,9 +14,8 @@ app.get("/", (req, res) => {
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
 });
-// console.log(process.env.DB_USER, process.env.DB_PASS);
-const uri =
-  "mongodb+srv://mehedi1:BJYNd8wldR3UNvVK@cluster0.kvk4oud.mongodb.net/?retryWrites=true&w=majority";
+
+const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.kvk4oud.mongodb.net/?retryWrites=true&w=majority`;
 
 // Create a MongoClient with a MongoClientOptions object to set the Stable API version
 const client = new MongoClient(uri, {
